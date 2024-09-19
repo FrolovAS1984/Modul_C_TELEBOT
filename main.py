@@ -9,7 +9,7 @@ bot = telebot.TeleBot(TOKEN)
 @bot.message_handler(commands=['start', 'help'])
 def start(message: telebot.types.Message):
     text = '''
-Приветствуем! Наш бот умеет переводить некоторое количество актуальных валют)
+Наш бот умеет переводить некоторое количество актуальных валют)
 Для конвертации отправьте сообщение боту в виде:
 <имя валюты, цену которой вы хотите узнать> 
 <имя валюты, в которой надо узнать цену первой валюты>  
@@ -17,7 +17,7 @@ def start(message: telebot.types.Message):
 Запрос боту нужно отправлять одной строкой, разделяя позиции пробелом, например:\n
 доллар рубль 100
            '''
-    bot.send_message(message.chat.id, text)
+    bot.send_message(message.chat.id, f" Приветствую, {message.chat.first_name}! {text}")
 
 
 @bot.message_handler(commands=['values'])
